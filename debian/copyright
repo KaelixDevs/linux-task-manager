@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: linux-task-manager
-Source: https://github.com/KaelixDevs/linux-task-manager
+Source: https://github.com/YOUR_GITHUB_USERNAME/linux-task-manager
 
 Files: *
 Copyright: 2026 Linux Task Manager contributors

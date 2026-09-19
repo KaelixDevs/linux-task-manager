@@ -1,19 +1,23 @@
 pkgname=linux-task-manager
-pkgver=0.3.1
+pkgver=__VERSION__
 pkgrel=1
 pkgdesc='Native GTK4 task manager for Linux'
 arch=('x86_64')
-url='https://github.com/KaelixDevs/linux-task-manager'
+url='https://github.com/YOUR_GITHUB_USERNAME/linux-task-manager'
 license=('MIT')
 depends=('gtk4>=4.12')
-makedepends=('meson' 'ninja' 'pkgconf' 'gcc')
-optdepends=('pciutils: improved GPU model detection' 'vulkan-tools: improved GPU model detection' 'mesa-utils: improved GPU model detection')
+makedepends=('meson' 'ninja' 'pkgconf')
+optdepends=(
+  'pciutils: improved GPU model detection'
+  'vulkan-tools: improved GPU model detection'
+  'mesa-utils: improved GPU model detection'
+)
 source=("$pkgname-$pkgver.tar.gz")
 sha256sums=('__SHA256__')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
-  arch-meson build --buildtype=release
+  meson setup build --prefix=/usr --buildtype=release --wrap-mode=nodownload
   meson compile -C build
 }
 

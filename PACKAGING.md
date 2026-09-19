@@ -1,61 +1,61 @@
 # Packaging
 
-All package output is written to `dist/` when using the included helper scripts.
+All package outputs are written to `dist/`.
 
-## RPM
+## Fedora / RPM
 
-Build on Fedora or another RPM-based build environment:
+On Fedora:
 
 ```bash
-sudo dnf install gcc meson ninja-build pkgconf-pkg-config gtk4-devel rpm-build desktop-file-utils
+sudo dnf install rpm-build gcc meson ninja-build pkgconf-pkg-config gtk4-devel desktop-file-utils
 ./packaging/build-rpm.sh
 ```
 
-The resulting RPM will be copied into `dist/`.
+## Debian / Ubuntu package
 
-## DEB
-
-Build on Debian/Ubuntu with GTK 4.12 or newer:
+On Fedora, the script automatically uses Podman/Docker with Ubuntu 24.04 so the binary is not linked against Fedora's newer userspace:
 
 ```bash
-sudo apt install build-essential debhelper meson ninja-build pkg-config libgtk-4-dev
+sudo dnf install podman
 ./packaging/build-deb.sh
 ```
 
-The resulting `.deb` will be copied into `dist/`.
+On Debian/Ubuntu it can build natively after installing:
 
-## Arch Linux
+```bash
+sudo apt install build-essential meson ninja-build pkg-config libgtk-4-dev dpkg-dev
+./packaging/build-deb.sh
+```
+
+## Arch package
+
+On Fedora or another non-Arch distro, install Podman and run:
+
+```bash
+sudo dnf install podman
+./packaging/build-arch.sh
+```
+
+The script builds inside `archlinux:latest`. On Arch itself, install the normal build dependencies and run the same script:
 
 ```bash
 sudo pacman -S --needed base-devel meson ninja pkgconf gtk4
 ./packaging/build-arch.sh
 ```
 
-`makepkg` should be run as a normal user, not root.
-
-The resulting `.pkg.tar.zst` will be copied into `dist/`.
-
 ## AppImage
 
-The AppImage helper uses `linuxdeploy`. Run it on a recent x86_64 Linux system with GTK4 development files installed:
+On Fedora, use Podman and let the script build inside Ubuntu 24.04:
 
 ```bash
+sudo dnf install podman
 ./packaging/appimage/build-appimage.sh
 ```
 
-The script downloads `linuxdeploy` if it is not already present in `.packaging/tools/` and writes the AppImage to `dist/`.
+On Ubuntu 24.04, it can build natively after installing the dependencies listed by the script.
 
-AppImages bundle most userspace dependencies, but they still depend on some host system ABI compatibility. Test the AppImage on more than one distribution before publishing a release.
-
-## GitHub releases
-
-The repository includes a release workflow in `.github/workflows/release.yml`.
-
-Create and push a version tag:
+## Clean outputs
 
 ```bash
-git tag v0.3.1
-git push origin v0.3.1
+rm -rf dist .packaging build
 ```
-
-GitHub Actions will build the package formats and attach them to a GitHub Release.

@@ -10,7 +10,7 @@ USER_NAME="$1"
 ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
 while IFS= read -r -d '' file; do
-  sed -i "s/KaelixDevs/$USER_NAME/g" "$file"
-done < <(grep -rlZ --exclude-dir=.git -- 'KaelixDevs' "$ROOT" || true)
+  sed -i "s/YOUR_GITHUB_USERNAME/$USER_NAME/g" "$file"
+done < <(grep -rlZ --exclude-dir=.git -- 'YOUR_GITHUB_USERNAME' "$ROOT" || true)
 
 echo "GitHub URLs set to: https://github.com/$USER_NAME/linux-task-manager"

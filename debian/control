@@ -5,7 +5,7 @@ Maintainer: Linux Task Manager contributors <noreply@example.com>
 Build-Depends: debhelper-compat (= 13), meson, ninja-build, pkg-config, libgtk-4-dev (>= 4.12)
 Standards-Version: 4.7.0
 Rules-Requires-Root: no
-Homepage: https://github.com/KaelixDevs/linux-task-manager
+Homepage: https://github.com/YOUR_GITHUB_USERNAME/linux-task-manager
 
 Package: linux-task-manager
 Architecture: any

@@ -4,7 +4,7 @@ Release:        1%{?dist}
 Summary:        Native GTK4 task manager for Linux
 
 License:        MIT
-URL:            https://github.com/KaelixDevs/linux-task-manager
+URL:            https://github.com/YOUR_GITHUB_USERNAME/linux-task-manager
 Source0:        %{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
