@@ -1,0 +1,23 @@
+# Meson
+build/
+builddir/
+meson-logs/
+meson-private/
+
+# Packaging output
+dist/
+.packaging/
+AppDir/
+*.deb
+*.rpm
+*.pkg.tar.zst
+*.AppImage
+*.AppImage.zsync
+*.tar.gz
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store

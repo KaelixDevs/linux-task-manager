@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  fedora:
+    runs-on: ubuntu-latest
+    container: fedora:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: dnf install -y gcc meson ninja-build pkgconf-pkg-config gtk4-devel
+      - name: Build
+        run: |
+          meson setup build --buildtype=release
+          meson compile -C build

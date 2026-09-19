@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Task Manager
+Comment=View processes and system performance
+Exec=linux-task-manager
+Icon=io.github.linuxtaskmanager.TaskManager
+Terminal=false
+Type=Application
+Categories=System;Monitor;
+Keywords=task;manager;process;cpu;memory;performance;system;
+StartupNotify=true

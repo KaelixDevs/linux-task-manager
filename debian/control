@@ -1,0 +1,16 @@
+Source: linux-task-manager
+Section: utils
+Priority: optional
+Maintainer: Linux Task Manager contributors <noreply@example.com>
+Build-Depends: debhelper-compat (= 13), meson, ninja-build, pkg-config, libgtk-4-dev (>= 4.12)
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://github.com/KaelixDevs/linux-task-manager
+
+Package: linux-task-manager
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: pciutils
+Description: native GTK4 task manager for Linux
+ Linux Task Manager is a GTK4 task manager written in C. It provides process
+ management and CPU, memory, GPU, network, disk, and system information.
