@@ -1,7 +1,7 @@
 Source: linux-task-manager
 Section: utils
 Priority: optional
-Maintainer: Linux Task Manager contributors <noreply@example.com>
+Maintainer: Linux Task Manager contributors <143954343+KaelixDevs@users.noreply.github.com>
 Build-Depends: debhelper-compat (= 13), meson, ninja-build, pkg-config, libgtk-4-dev (>= 4.12)
 Standards-Version: 4.7.0
 Rules-Requires-Root: no

@@ -49,7 +49,7 @@ Version: $VERSION-1
 Section: utils
 Priority: optional
 Architecture: $arch
-Maintainer: Linux Task Manager contributors <noreply@example.com>
+Maintainer: Linux Task Manager contributors <143954343+KaelixDevs@users.noreply.github.com>
 Depends: libc6, libgtk-4-1 (>= 4.12)
 Recommends: pciutils, mesa-utils, vulkan-tools
 Installed-Size: $(du -sk "$pkgroot/usr" | awk '{print $1}')

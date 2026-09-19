@@ -18,20 +18,6 @@ The goal is simple: give Linux a familiar desktop task manager with a clean proc
 
 GPU information is best-effort. The exact data available depends on the GPU driver and what it exposes through Linux sysfs or installed tools.
 
-## Screenshots
-
-Screenshots will be added as the UI is finalized.
-
-## Before publishing
-
-Set the GitHub username used by the package metadata:
-
-```bash
-./configure-github.sh YOUR_USERNAME
-```
-
-This only updates repository URLs in the packaging files.
-
 ## Building from source
 
 ### Fedora
